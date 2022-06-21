@@ -1,0 +1,14 @@
+<p>{{simulaciones[this.index] | json}}</p>
+
+<form (formGroup)="formulario">
+  <div>
+    <div class="input-group">
+      <input formControlName="dias" [value]="simulaciones[this.index].capital" type="text" class="form-control" placeholder="Capital" >
+      </div>
+  </div>
+  <div>
+    <div class="input-group">
+      <input formControlName="capital" [value]="simulaciones[this.index].dias"  type="text" class="form-control" placeholder="Dias">
+    </div>
+  </div>
+</form>

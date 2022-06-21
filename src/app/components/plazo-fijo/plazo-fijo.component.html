@@ -1,0 +1,35 @@
+<div class="card">
+  <div class="card-header">
+    Simular Plazo Fijo
+  </div>
+  <div class="card-body">
+    <form (formGroup)="formulario">
+      <a (click)="habilitarForm()">Editar</a>
+      <div>
+        <div class="input-group">
+          <input (formControlName)="capital" type="text" class="form-control" placeholder="Capital" [value]="capital"
+            [disabled]="habilitar">
+          <button class="btn btn-outline-secondary" type="button" (click)="incrCap(1000)">+</button>
+          <button class="btn btn-outline-secondary" type="button" (click)="incrCap(-1000)">-</button>
+        </div>
+      </div>
+      <div>
+        <div class="input-group">
+          <input (formControlName)="dias" type="text" class="form-control" placeholder="Capital" [value]="dias"
+            [disabled]="habilitar">
+          <button class="btn btn-outline-secondary" type="button" (click)="incrDias(1)">+</button>
+          <button class="btn btn-outline-secondary" type="button" (click)="incrDias(-1)">-</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<br>
+<div class="card">
+  <div class="card-header">Historial de Simulaciones</div>
+  <div class="card-body">
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let simulacion of simulaciones" class="list-group-item">{{simulacion | json}}</li>
+    </ul>
+  </div>
+</div>
